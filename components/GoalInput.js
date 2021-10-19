@@ -1,12 +1,14 @@
 import React from 'react'
-import { StyleSheet, Text, View ,Button,TextInput} from 'react-native'
+import { StyleSheet, Text, View ,Button,TextInput,Modal} from 'react-native'
 
-export default function GoalInput({addGoalHandler,goalInputHandler,enteredGoal}) {
+export default function GoalInput({addGoalHandler,goalInputHandler,enteredGoal,visible}) {
     return (
+        <Modal animationType="slide" visible={visible}>
         <View style={styles.inputContainer}>
         <TextInput placeholder="Course Goal"  style={styles.input} onChangeText={goalInputHandler} value={enteredGoal} />
          <Button title="Add" onPress={addGoalHandler} />
-     </View>
+         </View>
+        </Modal>
     )
 }
 

@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View ,TouchableHighlight ,TouchableNativeFeedback } from 'react-native'
 import React from 'react';
 
-export default function GoalItem({title}) {
+export default function GoalItem({title,onDelete,id}) {
     return (
+        <TouchableOpacity activeOpacity={0.8} onPress={onDelete.bind(this,id)}>
         <View style={styles.listItem}><Text>{title}</Text></View>
+        </TouchableOpacity>
     )
 }
 
